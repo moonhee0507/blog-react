@@ -17,7 +17,7 @@ const StyledLogo = styled.img`
 function Logo() {
   return (
     <h1>
-					<Wrapper href="./">
+					<Wrapper href="/">
 						<StyledLogo src={LogoImg} alt="My Blog" />
 					</Wrapper>
     </h1>
