@@ -4,6 +4,7 @@ import {
   Route
 } from "react-router-dom";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -55,6 +56,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.4;
   }
 
+  #root {
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+  }
+
   .sr-only {
       overflow: hidden;
       position: absolute;
@@ -67,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
+function App(props) {
 	return (
     <>
       <GlobalStyle />
@@ -79,6 +85,7 @@ function App() {
           <Route path="post/:postId" element={<PostViewPage />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
