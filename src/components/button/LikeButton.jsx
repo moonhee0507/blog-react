@@ -20,9 +20,8 @@ const StyledLikeButton = styled.button`
         color: var(--white-color);
     }
 
-    // TODO: focus되도 outline 안그려지는 현상(1s뒤 실행하도록 해보기)
     &:focus {
-        outline-color: rgba(var(--red-rgb), 0.2);
+        outline: rgba(var(--red-rgb), 0.2) solid;
         box-shadow: none;
     }
 `;
