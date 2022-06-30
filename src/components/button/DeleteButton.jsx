@@ -13,9 +13,13 @@ const StyledDeleteButton = styled.button`
     border-radius: var(--border-radius);
     transition: all 0.3s;
     
-    :hover {
+    &:hover {
         transition: all 0.3s;
         background: var(--red-color) url(${IconDeleteWhite}) no-repeat 50% 50% / 1.6rem;
+    }
+    &:focus {
+        outline: rgba(var(--red-rgb), 0.2) solid;
+        box-shadow: 0 0 0 1px var(--red-color);
     }
 `;
 
