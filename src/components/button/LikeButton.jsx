@@ -23,7 +23,7 @@ function LikeButton(props) {
     const [likesCount, setLikesCount] = useState(0);
     const [isClicked, setIsClicked] = useState(false);
 
-    const handleClick = () => {
+    const handleLikesCount = () => {
         if (isClicked) {
             setLikesCount(likesCount - 1);
         } else {
@@ -36,7 +36,7 @@ function LikeButton(props) {
 
     return (
         <StyledLikeButton 
-            onClick={ handleClick }
+            onClick={ handleLikesCount }
             style={{ background: isClicked ? 
                 `var(--red-color) url(${IconLikeWhite}) no-repeat 2.5rem 50% / 2.4rem` 
                 : 
