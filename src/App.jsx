@@ -6,11 +6,9 @@ import {
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-// Pages
 import HomePage from "./pages/HomePage";
 import PostViewPage from "./pages/PostViewPage";
 
-// styled-components
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -30,7 +28,6 @@ const GlobalStyle = createGlobalStyle`
         --border-radius: 0.4em;
     }
 
-    /* 공통 css */
     h1,
     a,
     div,
