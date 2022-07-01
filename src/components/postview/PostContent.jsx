@@ -6,11 +6,11 @@ import data from "../../data.json";
 import PostAuthorInformation from "./PostAuthorInformation";
 import PostCategories from "./PostCategories";
 
-// 버튼 컴포넌트
 import BackButton from "../button/BackButton";
 import ModifyButton from "../button/ModifyButton";
 import DeleteButton from "../button/DeleteButton";
 import LikeButton from "../button/LikeButton";
+import PostContentItem from "./PostContentItem";
 
 const StyledMaxwidth = styled.div`
     width: 1224px;
@@ -62,19 +62,6 @@ const StyledHr = {
     margin: "3.2rem 0"
 }
 
-const StyledP = {
-    fontSize: "1.6rem",
-    lineHeight: "1.6",
-    textAlign: "justify",
-    letterSpacing: "-0.01em"
-}
-
-const StyledPostImage = {
-    maxWidth: "100%",
-    margin: "3.2rem 0",
-    verticalAlign: "bottom"
-}
-
 const ButtonGroupDiv = styled.div`
     display: flex;
     align-items: center;
@@ -108,11 +95,7 @@ function PostContent(props) {
 
             <hr style={StyledHr}/>
 
-            <div>
-                <p style={StyledP}>{post.contents[0].text}</p>
-                <img style={StyledPostImage} src={`../..${post.contents[1].src}`} alt="" />
-                <p style={StyledP}>{post.contents[2].text}</p>
-            </div>
+            <PostContentItem/>
 
             <ButtonGroupDiv>
                 <ModifyButton />
