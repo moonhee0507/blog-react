@@ -32,8 +32,6 @@ function LikeButton(props) {
         setIsClicked(!isClicked);
     };
 
-    console.log('likesCount', likesCount);
-
     return (
         <StyledLikeButton 
             onClick={ handleLikesCount }
