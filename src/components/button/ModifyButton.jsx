@@ -21,7 +21,7 @@ const StyledModifyButton = styled(Link)`
 function ModifyButton(props) {
     return (
         <StyledModifyButton to="/">
-            <span class="sr-only">modify</span>
+            <span className="sr-only">modify</span>
         </StyledModifyButton>
     );
 }

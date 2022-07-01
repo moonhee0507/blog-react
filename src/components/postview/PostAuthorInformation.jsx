@@ -49,9 +49,9 @@ function PostAuthorInformation(props) {
 
   return (
     <Wrapper>
-      <dt class="sr-only">Author</dt>
+      <dt className="sr-only">Author</dt>
       <StyledAuthor><img src={`../..${post.profileImg}`} alt="" /> {post.userName}</StyledAuthor>
-      <dt class="sr-only">Created</dt>
+      <dt className="sr-only">Created</dt>
       <StyledDate>{post.created}</StyledDate>
   </Wrapper>
   )

@@ -28,7 +28,7 @@ function PostCategories() {
 
   return (
     <StyledDl>
-      <dt class="sr-only">Category</dt>
+      <dt className="sr-only">Category</dt>
       <dd>{post.category[0]}</dd>
       <dd>{post.category[1]}</dd>
     </StyledDl>
