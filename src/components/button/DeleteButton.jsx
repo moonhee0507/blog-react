@@ -26,7 +26,7 @@ const StyledDeleteButton = styled.button`
 function DeleteButton(props) {
     return (
         <StyledDeleteButton >
-            <span class="sr-only">delete</span>
+            <span className="sr-only">delete</span>
         </StyledDeleteButton>
     );
 }
