@@ -21,12 +21,7 @@ const StyledAside = styled.aside`
 	text-align: center;
 	font-size: 2rem;
     z-index: 1;
-
-    @media (max-width: 1024px) {
-        .sidebar {
-        width: 100%;
-        }
-}
+    width: 100%;
 `;
 
 const StyledAboutMeTitle = styled.span`
@@ -65,7 +60,7 @@ const StyledUserProfile = styled.img`
     border-radius: 50%;
     display: block;
     margin: 0 auto;
-  `;
+`;
 
 const StyledUserName = styled.p`
     color: rgb(55, 170, 236);
@@ -117,31 +112,23 @@ const StyledSocial = styled.div`
 `;
 
 function SideBar(props) {
-    const {isLoggedIn, onClickLogin, onClickLogout} = props;
+    // const {isLoggedIn, onClickLogin, onClickLogout} = props;
     const { users } = useContext(blogData);
-
+    console.log('users[0].category', users[0].category)
     return (
         <StyledAside>
         <div className="sidebarItem">
             <StyledAboutMeTitle>ABOUT ME</StyledAboutMeTitle>
-
-            {isLoggedIn ? (
                 <div>
                 <StyledUserProfile src={`../..${users[0].profileImg}`} alt="프로필 사진" /> 
                 <StyledUserName>{users[0].name}</StyledUserName>
                 </div>
-            ) : (
-                <div>
-                <StyledUserProfile src={noimg} alt="프로필 사진" />
-                <StyledUserName>Guest</StyledUserName>
-                </div>
-            )}
-
             <StyledUserIntroduction>{users[0].userInfo}</StyledUserIntroduction>
         </div>
+
         <div className="sidebarItem">
             <StyledCategoryTitle>CATEGORIES</StyledCategoryTitle>
-            <StyledCategories>
+            {/* <StyledCategories>
             <li>
                 <a href="">{users[0].category[0]}</a>
             </li>
@@ -163,8 +150,19 @@ function SideBar(props) {
             <li>
                 <a href="">{users[0].category[6]}</a>
             </li>
-            </StyledCategories>
+            </StyledCategories> */}
+            {props.Category.map((users) => {
+                console.log('사이드바의 map users', users)
+                return (
+                    <StyledCategories>
+                        <li key={users.id}>
+                            <a href="">{users.category}</a>
+                        </li>
+                    </StyledCategories>
+                );
+            })}
         </div>
+
         <div className="sidebarItem">
             <StyledFollowTitle>FOLLOW</StyledFollowTitle>
             <StyledSocial>
