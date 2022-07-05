@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PostListItem from "../postlistitem/PostListItem";
+import PostListItem from "../postListItem/PostListItem";
 
 const StyledUl = styled.ul`
     display: grid;

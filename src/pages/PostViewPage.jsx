@@ -1,6 +1,6 @@
 import React from "react";
-import PostBackground from "../components/postview/PostBackground";
-import PostContent from "../components/postview/PostContent";
+import PostBackground from "../components/postView/PostBackground";
+import PostContent from "../components/postView/PostContent";
 
 
 function PostViewPage(props) {
