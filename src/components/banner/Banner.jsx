@@ -22,7 +22,7 @@ const Container = styled.div`
     text-align: center;
     color: var(--gray-background-light);
 
-    ::before {
+    &::before {
         content: "";
         display: block;
         position: absolute;
@@ -48,22 +48,22 @@ const Container = styled.div`
         width: 100%;
         }
     }
-    `;
+`;
 
-    const SmallTitle = styled.p`
-    border: 1px solid rgba(249, 249, 249, 0.3);
-    border-width: 1px 0;
-    padding: 1rem 0 0.8rem;
-    font-size: 2rem;
-    letter-spacing: 0.2em;
-    position: relative;
-    `;
+const SmallTitle = styled.p`
+border: 1px solid rgba(249, 249, 249, 0.3);
+border-width: 1px 0;
+padding: 1rem 0 0.8rem;
+font-size: 2rem;
+letter-spacing: 0.2em;
+position: relative;
+`;
 
-    const LargeTitle = styled.p`
-    font-weight: bold;
-    font-size: 5.4rem;
-    margin: 1.6rem 0;
-    position: relative;
+const LargeTitle = styled.p`
+font-weight: bold;
+font-size: 5.4rem;
+margin: 1.6rem 0;
+position: relative;
 `;
 
 const BannerDescription = styled.p`
@@ -85,7 +85,7 @@ function Banner() {
                 <SmallTitle>{blog.subTitle}</SmallTitle>
                 <LargeTitle>{blog.mainTitle}</LargeTitle>
                 <BannerDescription>
-                {blog.description}
+                    {blog.description}
                 </BannerDescription>
             </Container>
             </WrapperMaxwidth>
