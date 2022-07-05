@@ -8,26 +8,26 @@ import iconRegister from "../../assets/icon-register.svg";
 import write from "../../assets/icon-modify-white.svg";
 
 const StyledUl = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 `;
 
 const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 	width: 4.4rem;
 	height: 4.4rem;
-  border-radius: 50%;
-  vertical-align: bottom;
+    border-radius: 50%;
+    vertical-align: bottom;
 `;
 
 const LoginButton = styled.a`
 	background: var(--gray-background);
 	color: var(--black-color);
 
-  display: inline-flex;
+    display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.8rem;
@@ -38,7 +38,7 @@ const LoginButton = styled.a`
 	font-weight: bold;
 	line-height: 1;
 
-  @media (max-width: 640px) {
+    @media (max-width: 640px) {
 		width: 4.4rem;
 		height: 4.4rem;
 		padding: 0;
@@ -50,7 +50,7 @@ const RegisterButton = styled.a`
 	background: var(--gray-background);
 	color: var(--black-color);
 
-  display: inline-flex;
+    display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.8rem;
@@ -61,12 +61,12 @@ const RegisterButton = styled.a`
 	font-weight: bold;
 	line-height: 1;
 
-  @media (max-width: 640px) {
+    @media (max-width: 640px) {
 		width: 4.4rem;
 		height: 4.4rem;
 		padding: 0;
 		border-radius: 50%;
-  }
+    }
 `;
 
 const WriteButton = styled.a`
@@ -89,7 +89,7 @@ const LogoutButton = styled.a`
 	background: var(--white-color);
 	color: var(--black-color);
 
-  display: inline-flex;
+    display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.8rem;
@@ -111,53 +111,53 @@ const ImageOfButton = styled.img`
 `;
 
 function UserMenu(props) {
-  const {isLoggedIn, onClickLogin, onClickLogout} = props;
-  
-  return (
-    <>
-      {isLoggedIn ? (
-        <StyledUl>
-          <li>
-            <a href="#">
-              <StyledImage src={profile} alt="프로필 사진" />
-            </a>
-          </li>
-          <li className="only-pc">
-            <WriteButton href="#" >
-              <ImageOfButton src={write} alt="" />
-              <span>Write</span>
-            </WriteButton>
-          </li>
-          <li>
-            <LogoutButton href="#" onClick={onClickLogout}>
-              <LogoutImage src={iconLogout} alt="" />
-              <span>Logout</span>
-            </LogoutButton>
-          </li>
-        </StyledUl>
-    ) : (
-        <StyledUl>
-          <li>
-            <a href="#">
-              <StyledImage src={noimg} alt="프로필 사진" />
-            </a>
-          </li>
-          <li>
-            <LoginButton href="#" onClick={onClickLogin}>
-              <ImageOfButton src={iconLogin} alt="" />
-              <span>Login</span>
-            </LoginButton>
-          </li>
-          <li>
-            <RegisterButton href="#">
-              <ImageOfButton src={iconRegister} alt="" />
-              <span>Register</span>
-            </RegisterButton>
-          </li>
-        </StyledUl>
-      )}
-    </>
-  );
+    // const {isLoggedIn, onClickLogin, onClickLogout} = props;
+    
+    return (
+        <>
+        {props.isLoggedIn ? (
+            <StyledUl>
+            <li>
+                <a href="#">
+                <StyledImage src={profile} alt="프로필 사진" />
+                </a>
+            </li>
+            <li className="only-pc">
+                <WriteButton href="#" >
+                <ImageOfButton src={write} alt="" />
+                <span>Write</span>
+                </WriteButton>
+            </li>
+            <li>
+                <LogoutButton href="#" onClick={props.onClickLogout}>
+                <LogoutImage src={iconLogout} alt="" />
+                <span>Logout</span>
+                </LogoutButton>
+            </li>
+            </StyledUl>
+        ) : (
+            <StyledUl>
+            <li>
+                <a href="#">
+                <StyledImage src={noimg} alt="프로필 사진" />
+                </a>
+            </li>
+            <li>
+                <LoginButton href="#" onClick={props.onClickLogin}>
+                <ImageOfButton src={iconLogin} alt="" />
+                <span>Login</span>
+                </LoginButton>
+            </li>
+            <li>
+                <RegisterButton href="#">
+                <ImageOfButton src={iconRegister} alt="" />
+                <span>Register</span>
+                </RegisterButton>
+            </li>
+            </StyledUl>
+        )}
+        </>
+    );
 }
 
 export default UserMenu;

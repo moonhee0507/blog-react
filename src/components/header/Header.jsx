@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import UserMenu from "./UserMenu";
 import styled from "styled-components";
@@ -36,27 +36,29 @@ const StyledMaxwidth = styled.div`
 `;
 
 function Header(props) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const onClickLogin = () => {
-        setIsLoggedIn(true);
-    };
+    // const onClickLogin = () => {
+    //     setIsLoggedIn(true);
+    // };
 
-    const onClickLogout = () => {
-        setIsLoggedIn(false);
-    };
+    // const onClickLogout = () => {
+    //     setIsLoggedIn(false);
+    // };
+
     return (
         <StyledHeader>
         <StyledMaxwidth>
             <Logo />
             <UserMenu 
-                isLoggedIn={isLoggedIn}
-                onClickLogin={onClickLogin}
-                onClickLogout={onClickLogout}
+                user={props.user} 
+                isLoggedIn={props.isLoggedIn}
+                onClickLogin={props.onClickLogin}
+                onClickLogout={props.onClickLogout}
             />
         </StyledMaxwidth>
         </StyledHeader>
     );
 }
 
-export default Header
+export default Header;

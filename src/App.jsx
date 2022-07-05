@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
     BrowserRouter,
     Routes,
@@ -5,10 +6,8 @@ import {
 } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-
 import HomePage from "./pages/HomePage";
 import PostViewPage from "./pages/PostViewPage";
-
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -74,19 +73,34 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-function App(props) {
+function App() {
+    const [user, setUser] = useState({});
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleUser = (user) => {
+        setUser(user);
+    }
+
+    const onClickLogin = () => {
+        setIsLoggedIn(true);
+    };
+
+    const onClickLogout = () => {
+        setIsLoggedIn(false);
+    };
+
 	return (
-    <>
-        <GlobalStyle />
-        <Header />
-        <BrowserRouter>
+        <>
             <GlobalStyle />
-            <Routes>
-                <Route index element={<HomePage />} />
-                <Route path="post/:postId" element={<PostViewPage />} />
-            </Routes>
-        </BrowserRouter>
-        <Footer />
+            <Header user={user} handleUser={handleUser} isLoggedIn={isLoggedIn} onClickLogin={onClickLogin} onClickLogout={onClickLogout} />
+            <BrowserRouter>
+                <GlobalStyle />
+                <Routes>
+                    <Route index element={<HomePage user={user} isLoggedIn={isLoggedIn} />} />
+                    <Route path="post/:postId" element={<PostViewPage />} />
+                </Routes>
+            </BrowserRouter>
+            <Footer />
         </>
     );
 }
